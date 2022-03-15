@@ -16,7 +16,7 @@ RUN conda update -qy conda \
 
 # pymol requirements
 RUN apt-get update && apt-get -y install \
-	gcc            \
+	gcc g++ git    \
 	libglew-dev    \
 	libglm-dev     \
 	libnetcdf-dev  \
