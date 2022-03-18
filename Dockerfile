@@ -31,7 +31,8 @@ RUN	git clone https://github.com/schrodinger/pymol-open-source.git && \
 	git clone https://github.com/rcsb/mmtf-cpp.git && \
 	mv mmtf-cpp/include/mmtf* pymol-open-source/include/ && \
 	cd pymol-open-source && \
-	python3 setup.py build install 
+	python3 setup.py build install
+RUN	rm -rf pymol-open-source
 
 # quicksom
 RUN python3 -m pip install quicksom
