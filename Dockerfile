@@ -4,7 +4,7 @@ MAINTAINER Tru Huynh <tru@pasteur.fr>
 RUN	conda update --yes -n base -c defaults conda && \
 	conda update --yes --all 
 RUN eval "$(/opt/conda/bin/conda shell.bash hook)" && \
-	conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+	conda install pytorch torchvision cudatoolkit=11.3 -c pytorch
 
 # jupyter/ conda packages.
 ENV PATH="/opt/conda/bin:$PATH"
@@ -24,7 +24,8 @@ RUN apt-get update && apt-get -y install \
 	libxi6 \
 	libxinerama1 \
 	xkb-data \
-	libxkbcommon0
+	libxkbcommon0 \
+	libfreetype-dev
 
 RUN	git clone https://github.com/schrodinger/pymol-open-source.git && \
 	git clone https://github.com/rcsb/mmtf-cpp.git && \
